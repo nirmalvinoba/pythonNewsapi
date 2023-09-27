@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>News Headlines</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <h1>Top Headlines</h1>
+    <form method="GET" action="/search">
+        <input type="text" name="query" placeholder="Enter a country name">
+        <input type="submit" value="Search">
+    </form>
+    <ul>
+        {% for article in articles %}
+        <li>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.description }}</p>
+            <a href="{{ article.url }}" target="blank">Read more</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
